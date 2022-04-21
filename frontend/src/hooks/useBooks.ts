@@ -15,3 +15,7 @@ export default function useBooks() {
 
     return books;
 }
+
+export function postNewBook(newBook: Book) {
+    axios.post("/book", newBook)
+}
