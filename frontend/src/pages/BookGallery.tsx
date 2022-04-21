@@ -7,8 +7,8 @@ export default function BookGallery() {
 
     return (
         <div id="bookGallery">
-            <BookOverview />
             <CreateBook />
+            <BookOverview />
         </div>
     )
 }

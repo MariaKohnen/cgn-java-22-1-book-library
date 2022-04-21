@@ -1,0 +1,22 @@
+#createBook {
+    background-color: #b1ccbd;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    padding: 20px 20px 30px 20px;
+    box-shadow: 1px 0 5px #9c9c9c;
+}
+
+#createBook > h2 {
+    text-align: center;
+}
+
+.formAddBook {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
