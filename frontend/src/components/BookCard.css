@@ -1,0 +1,19 @@
+#bookCard {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px;
+    padding: 20px;
+    box-shadow: 1px 0 30px #cfcfcf;
+}
+
+#bookCard >div {
+    align-self: stretch;
+    text-align: center;
+}
+
+#bookCard> div:nth-child(odd) {
+    font-weight: bold;
+    font-size: 1.3rem;
+}

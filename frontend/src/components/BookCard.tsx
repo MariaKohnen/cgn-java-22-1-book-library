@@ -1,13 +1,16 @@
 import {Book} from "../modul/Book";
+import "./BookCard.css"
 
 type BookCardProps = {
-    book : Book;
+    book: Book;
 }
 
-export function BookCard({book} : BookCardProps) {
+export function BookCard({book}: BookCardProps) {
     return (
-        <div>
-            <div>{book.title}</div>
+        <div id={"bookCard"}>
+            <div>{book.title}
+                <hr></hr>
+            </div>
             <div>{book.isbn}</div>
         </div>
     )
