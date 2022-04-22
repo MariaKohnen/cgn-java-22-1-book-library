@@ -3,16 +3,21 @@ import {FormEvent, useState} from "react";
 import {postNewBook} from "../hooks/useBooks";
 import "./CreateBook.css";
 
+type CreateBookProps = {
+    addBook : (newBook : Book) => void;
+}
 
-export default function CreateBook() {
 
-    const [title, setTitle] = useState('');
-    const [isbn, setIsbn] = useState('');
+export default function CreateBook({addBook} : CreateBookProps) {
+
+    const [title, setTitle] = useState<string>('');
+    const [isbn, setIsbn] = useState<string>('');
 
     const handleSubmit = (event : FormEvent<HTMLFormElement>) => {
         const newBook : Book = {title, isbn};
-        console.log(newBook);
-        postNewBook(newBook);
+        event.preventDefault();
+        postNewBook(newBook)
+            .then(response => addBook(response));
     }
 
     return (

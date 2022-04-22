@@ -1,10 +1,13 @@
-import useBooks from "../hooks/useBooks";
 import {BookCard} from "./BookCard";
 import "./BookOverview.css";
+import {Book} from "../modul/Book";
 
-export default function BookOverview() {
+type BookOverviewProps = {
+    books : Book []
+}
 
-    const books = useBooks();
+export default function BookOverview({books} : BookOverviewProps) {
+
 
     return (<div id={"bookOverview"}>
             {books.map(obj => <BookCard key={obj.isbn} book={obj}/>)}

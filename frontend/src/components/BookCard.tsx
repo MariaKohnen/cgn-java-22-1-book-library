@@ -6,6 +6,7 @@ type BookCardProps = {
 }
 
 export function BookCard({book}: BookCardProps) {
+
     return (
         <div id={"bookCard"}>
             <div>{book.title}

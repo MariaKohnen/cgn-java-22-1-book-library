@@ -6,6 +6,10 @@ export default function useBooks() {
 
     const [books, setBooks] = useState<Book[]>([]);
 
+    const addBook = (newBook : Book) => {
+        setBooks((allBooks : Book[]) => [...allBooks, newBook])
+    }
+
     useEffect(() => {
         axios.get("/book")
             .then(response => response.data)
@@ -13,9 +17,11 @@ export default function useBooks() {
             .catch(console.error)
     }, [])
 
-    return books;
+    return {books, addBook};
 }
 
 export function postNewBook(newBook: Book) {
-    axios.post("/book", newBook)
+    return axios.post("/book", newBook)
+        .then(response => response.data)
+        .catch(console.error)
 }
